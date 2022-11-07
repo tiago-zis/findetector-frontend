@@ -1,0 +1,200 @@
+{
+    "words": {
+        "yes": "Sim",
+        "no": "Não",
+        "files": "Arquivos"
+    },
+    "phrases": {
+        "uploadButton": "Clique para carregar o arquivo",
+        "deleteConfirmation": "Tem certeza de que deseja excluir este registro?",
+        "successVerificationMessage": "Seu endereço de email foi verificado com sucesso.",
+        "errorVerificationMessage": "Ocorreu um erro durante a verificação do email.",
+        "invalidVerificationMessage": "Chave de verificação inválida!"
+    },
+    "pages": {
+        "login": {
+            "title": "Efetue o login",
+            "signin": "Entrar",
+            "signup": "Inscrever-se",
+            "divider": "ou",
+            "fields": {
+                "email": "Email",
+                "password": "Password"
+            },
+            "errors": {
+                "validEmail": "Endereço de email inválido"
+            },
+            "buttons": {
+                "submit": "Login",
+                "forgotPassword": "Esqueceu a senha?",
+                "noAccount": "Não tem uma conta?",
+                "rememberMe": "Lembre-me"
+            }
+        },
+        "forgotPassword": {
+            "title": "Esqueceu a senha?",
+            "fields": {
+                "email": "Email"
+            },
+            "errors": {
+                "validEmail": "Endereço de email inválido"
+            },
+            "buttons": {
+                "submit": "Enviar instruções de redefinição"
+            }
+        },
+        "register": {
+            "title": "Inscreva-se para criar a sua conta",
+            "fields": {
+                "email": "Email",
+                "password": "Password"
+            },
+            "errors": {
+                "validEmail": "Endereço de email inválido"
+            },
+            "buttons": {
+                "submit": "Registrar-se",
+                "haveAccount": "Possui uma conta?"
+            }
+        },
+        "updatePassword": {
+            "title": "Atualizar senha",
+            "fields": {
+                "password": "Nova senha",
+                "confirmPassword": "Confirmar a senha"
+            },
+            "errors": {
+                "confirmPasswordNotMatch": "As senhas não coincidem"
+            },
+            "buttons": {
+                "submit": "Atualizar"
+            }
+        },
+        "error": {
+            "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
+            "404": "Sorry, the page you visited does not exist.",
+            "resource404": "Are you sure you have created the {{resource}} resource.",
+            "backHome": "Back Home"
+        }
+    },
+    "actions": {
+        "list": "Lista",
+        "create": "Criar",
+        "edit": "Editar",
+        "show": "Visualizar"
+    },
+    "buttons": {
+        "add": "Adicionar",
+        "create": "Criar",
+        "save": "Salvar",
+        "logout": "Sair",
+        "delete": "Excluir",
+        "edit": "Editar",
+        "cancel": "Cancelar",
+        "confirm": "Você tem certeza?",
+        "filter": "Filter",
+        "clear": "Limpar",
+        "refresh": "Atualizar",
+        "show": "Visualizar",
+        "undo": "Desfazer",
+        "import": "Importar",
+        "export": "Exportar",
+        "clone": "Clonar",
+        "accept": "Aceitar",
+        "acceptAll": "Aceitar tudo",
+        "reject": "Rejeitar",
+        "rejectAll": "Rejeitar tudo",
+        "nextStep": "Próximo",
+        "previousStep": "Anterior"
+    },
+    "loading": "Loading",
+    "tags": {
+        "clone": "Clone"
+    },
+    "table": {
+        "actions": "Actions"
+    },
+    "search": {
+        "placeholder": "Search by Store ID, E-mail, Keyword",
+        "more": "more"
+    },
+    "status": {
+        "enable": "Enable",
+        "disable": "Disable"
+    },
+    "warnWhenUnsavedChanges": "Você tem certeza de que quer sair? Você tem alterações não salvas.",
+    "notifications": {
+        "success": "Sucesso",
+        "error_": "Erro",
+        "error": "Erro (status code: {{statusCode}})",
+        "undoable": "Você tem {{seconds}} segundos para desfazer",
+        "createSuccess": "Successfully created {{resource}}",
+        "createError": "There was an error creating {{resource}} (status code: {{statusCode}})",
+        "deleteSuccess": "Successfully deleted {{resource}}",
+        "deleteError": "Error when deleting {{resource}} (status code: {{statusCode}})",
+        "editSuccess": "Successfully edited {{resource}}",
+        "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
+        "importProgress": "Importing: {{processed}}/{{total}}"
+    },
+    
+    "users": {
+        "users": "Usuários",
+        "titles": {
+            "create": "Novo Usuário",
+            "edit": "Alterar Usuário",
+            "list": "Usuários",
+            "show": "Visualizar Usuário"
+        },
+        "fields": {
+            "id": "Código",
+            "avatar": {
+                "label": "Avatar",
+                "description": "Click or drag avatar image to this area to upload."
+            },
+            "name": "Nome",
+            "email": "Email",
+            "plainPassword": "Password",
+            "enabled": "Habilitado?",
+            "isVerified": "Verificado?",
+            "gender": {
+                "label": "Gender",
+                "Male": "Male",
+                "Female": "Female"
+            },
+            "gsm": "Gsm Number",
+            "createdAt": "CreatedAt",
+            "isActive": {
+                "label": "Is Active",
+                "true": "Yes",
+                "false": "No"
+            }
+        },
+        "filter": {
+            "title": "Filters",
+            "search": {
+                "label": "Search",
+                "placeholder": "FirstName, lastName, gsm, etc."
+            },
+            "createdAt": {
+                "label": "Created At"
+            },
+            "gender": {
+                "label": "Gender",
+                "placeholder": "Gender",
+                "male": "Male",
+                "female": "Female"
+            },
+            "isActive": {
+                "label": "Active",
+                "placeholder": "Active status",
+                "true": "Yes",
+                "false": "No"
+            },
+            "submit": "Filter"
+        },
+        "addresses": {
+            "addresses": "Addresses",
+            "address": "Address"
+        }
+    }
+}
