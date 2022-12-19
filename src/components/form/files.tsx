@@ -35,7 +35,7 @@ export const FilesForm: React.FC<Props> = ({
   const t = useTranslate();
 
   const uploadProps = {
-    action: `${apiUrl}/file/upload`,
+    action: `${apiUrl}/image/upload`,
     multiple: false,
     headers: {
       Authorization: `Bearer ${localStorage.getItem(Constants.TOKEN_KEY)}`,
@@ -107,9 +107,11 @@ export const FilesForm: React.FC<Props> = ({
           }
         }
 
-        let values = form.getFieldsValue();
-        setObjectValue(values, name, newList);
-        form.setFieldsValue(values);
+        if (form) {
+          let values = form.getFieldsValue();
+          setObjectValue(values, name, newList);
+          form.setFieldsValue(values);
+        }
 
         onChange(newList);
         return newList;

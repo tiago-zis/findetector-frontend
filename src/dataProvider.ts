@@ -7,7 +7,7 @@ import {
     CrudSorting,
 } from "@pankod/refine-core";
 import { Constants } from "helpers/constants";
-
+import moment from 'moment';
 
 const axiosInstance = axios.create();
 
@@ -144,15 +144,36 @@ const JsonServer = (
 
         let and = '';
         let queryFilter = '';
-
+        
         for (const [key, value] of Object.entries(queryFilters)) {
-            queryFilter += and + key + "=" + value;
+            if (value === "") {
+                continue;
+            }
+
+            const keys = key.split('_');
+
+            if (keys.length === 2) {
+
+                if (moment(value).isValid() && keys[1] === 'gte') {
+                    queryFilter += `${and}${keys[0]}[after]=${moment(value).format('YYYY-MM-DD')} 00:00:00`;
+                } else if (moment(value).isValid() && keys[1] === 'lte') {
+                    queryFilter += `${and}${keys[0]}[before]=${moment(value).format('YYYY-MM-DD')} 23:59:59`;
+                } else if (keys[1] === 'like') {
+                    queryFilter += `${and}${keys[0]}=${value}`;
+                } else {
+                    queryFilter += `${and}${keys[0]}[${keys[1]}]=${value}`;
+                }                
+                
+            } else {
+                queryFilter += and + key + "=" + value;
+            }
+            
             and = "&";
         }
 
         httpClient.defaults.headers = getHeaders(httpClient);
         const { data, headers } = await httpClient.get(
-            `${url}${queryFilter !== "" ? "?" + queryFilter : ""}`,
+            `${url}${queryFilter !== "" ? (hasPagination ? "&":"?") + queryFilter : ""}`,
         );
 
         const total = +headers["x-total-count"];
@@ -229,8 +250,8 @@ const JsonServer = (
         return { data: response };
     },
 
-    getOne: async ({ resource, id }) => {
-        const url = `${apiUrl}/${resource}/${id}`;
+    getOne: async ({ resource, id }) => {        
+        const url = `${apiUrl}/${resource.replaceAll('/', '')}/${id}`;
 
         httpClient.defaults.headers = getHeaders(httpClient);
         const { data } = await httpClient.get(url);

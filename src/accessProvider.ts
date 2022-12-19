@@ -25,6 +25,10 @@ export const accessControlProvider: AccessControlProvider = {
         let reason = "Unauthorized";
 
         switch (resource) {
+            case 'images':
+                can = hasPermission('ROLE_USER');
+                break;
+
             case 'users':
                 can = hasPermission('ROLE_ADMIN');
                 break;

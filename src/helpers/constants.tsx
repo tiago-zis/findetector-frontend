@@ -4,6 +4,12 @@ export const ROLES = {
     ]
 }
 
+export const STATUS_CHOICES = [
+    { name: "words.uploaded", value: "uploaded" },
+    { name: "words.processing", value: "processing" },
+    { name: "words.finished", value: "finished" }
+]
+
 export const Constants = {
     API_URL: 'http://localhost:8000',
     TOKEN_KEY: 'token_key',

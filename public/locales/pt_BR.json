@@ -2,14 +2,27 @@
     "words": {
         "yes": "Sim",
         "no": "Não",
-        "files": "Arquivos"
+        "files": "Arquivos",
+        "uploaded": "Carregado",
+        "processing": "Processando",
+        "finished": "Finalizado",
+        "all": "Todos",
+        "images": "Imagens",
+        "confidence": "Confiança",
+        "download": "Download",
+        "success": "Sucesso"
     },
     "phrases": {
         "uploadButton": "Clique para carregar o arquivo",
         "deleteConfirmation": "Tem certeza de que deseja excluir este registro?",
         "successVerificationMessage": "Seu endereço de email foi verificado com sucesso.",
         "errorVerificationMessage": "Ocorreu um erro durante a verificação do email.",
-        "invalidVerificationMessage": "Chave de verificação inválida!"
+        "invalidVerificationMessage": "Chave de verificação inválida!",
+        "tagFilterDescription": "Use as tags para filtrar sua pesquisa",
+        "imageSearch": "Pesquisa de imagem",
+        "imageVisualization": "Visualização da imagem",
+        "isValidDetection": "Detecção valida?",
+        "isValidDetectionMessage": "Status da detecção atualizada com sucesso"
     },
     "pages": {
         "login": {
@@ -136,7 +149,6 @@
         "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
         "importProgress": "Importing: {{processed}}/{{total}}"
     },
-    
     "users": {
         "users": "Usuários",
         "titles": {
@@ -195,6 +207,12 @@
         "addresses": {
             "addresses": "Addresses",
             "address": "Address"
+        }
+    },
+    "images": {
+        "fields": {
+            "creationDate": "Data",
+            "processingDate": "Processado em"
         }
     }
 }
