@@ -19,32 +19,6 @@ export interface IFile {
     originalName: string;
 }
 
-export interface IDriveFile {
-    id: number;
-    name: string;
-    mime: string;
-    size: number;
-    driveId: string;
-}
-
-export interface IProduct {
-    id: number;
-    name: string;
-    isActive: boolean;
-    description: string;
-    images: IFile[];
-    createdAt: string;
-    price: number;
-    category: ICategory;
-    stock: number;
-}
-
-export interface ICategory {
-    id: number;
-    title: string;
-    isActive: boolean;
-}
-
 export interface IImage {
     id: number;
     file: IFile;
@@ -52,11 +26,6 @@ export interface IImage {
     processingDate: string;
     creationDate: string;
     processedData: any;
-}
-
-export interface IPoint {
-    x: number;
-    y: number;
 }
 
 export interface IImageBoxProps {

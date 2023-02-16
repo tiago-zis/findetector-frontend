@@ -31,7 +31,6 @@ export const ImageContainer: React.FC<ImageItemProps> = ({
     }, [])
 
     const downloadCallBack = (uid: string) => {
-
         mutate(
             {
                 url: `${apiUrl}/image/crop`,
@@ -47,7 +46,7 @@ export const ImageContainer: React.FC<ImageItemProps> = ({
                     const type = base64.split(';')[0].split('/')[1];
                     let a = document.createElement("a");
                     a.href = base64;
-                    a.download = `${uid}.${type}`;
+                    a.download = `${fileName.substring(0, fileName.lastIndexOf('.'))}-${uid}.${type}`;
                     a.click();
                 },
             }
@@ -80,7 +79,7 @@ export const ImageContainer: React.FC<ImageItemProps> = ({
                     })
 
                     boxList.current = [...list];
-                    console.log(boxList.current)
+                    
                     setBoxes([...boxList.current])
 
                     open?.({
@@ -125,9 +124,8 @@ export const ImageContainer: React.FC<ImageItemProps> = ({
         boxList.current = [...list];
         setBoxes([...boxList.current]);
     }
-
+    
     return (
-
 
         <div className="ant-image" style={{ width: "80%" }}>
 
@@ -138,6 +136,8 @@ export const ImageContainer: React.FC<ImageItemProps> = ({
             {
                 imgRef.current && <span />
             }
+
+            
 
             {boxes.map((e: IImageBoxProps, i: any) => <ImageBox key={i}
                 {...e}

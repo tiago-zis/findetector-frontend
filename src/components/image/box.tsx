@@ -44,7 +44,6 @@ export const ImageBox: React.FC<IImageBoxProps> = ({
                     {t('phrases.isValidDetection')}
                 </Text>
                 <Radio.Group onChange={(e: any) => {
-                    console.log(e.target.value)
                     checkValidCallback(e, id);
                     setValue(e.target.value);
                 }} value={value}>

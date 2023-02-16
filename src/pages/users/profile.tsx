@@ -90,7 +90,6 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
                     },
                 })
                 .then(({ data: response }) => {
-                    console.log(file, response)
                     setImage(response);
                     onSuccess(response, file);
                     

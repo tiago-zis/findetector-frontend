@@ -61,8 +61,6 @@ export const Header: React.FC = () => {
         onClose();
     }
 
-    console.log(user)
-
     const menu = (
         <Menu selectedKeys={currentLocale ? [currentLocale] : []}>
             {[...(i18n.languages ?? [])].sort().map((lang: string) => (

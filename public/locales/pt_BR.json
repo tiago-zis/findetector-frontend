@@ -12,7 +12,8 @@
         "download": "Download",
         "success": "Sucesso",
         "profile": "Perfil",
-        "error": "Erro"
+        "error": "Erro",
+        "FinDetector": "FinDetector"
     },
     "phrases": {
         "uploadButton": "Clique para carregar o arquivo",
@@ -91,10 +92,10 @@
             }
         },
         "error": {
-            "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
-            "404": "Sorry, the page you visited does not exist.",
-            "resource404": "Are you sure you have created the {{resource}} resource.",
-            "backHome": "Back Home"
+            "info": "Você pode ter esquecido de adicionar o componente {{action}} ao recurso {{resource}}.",
+            "404": "Desculpe, a página que você visitou não existe.",
+            "resource404": "Tem certeza de que criou o recurso {{resource}}?",
+            "backHome": "Voltar"
         }
     },
     "actions": {
@@ -127,20 +128,12 @@
         "nextStep": "Próximo",
         "previousStep": "Anterior"
     },
-    "loading": "Loading",
+    "loading": "Carregando",
     "tags": {
         "clone": "Clone"
     },
     "table": {
-        "actions": "Actions"
-    },
-    "search": {
-        "placeholder": "Search by Store ID, E-mail, Keyword",
-        "more": "more"
-    },
-    "status": {
-        "enable": "Enable",
-        "disable": "Disable"
+        "actions": "Ações"
     },
     "warnWhenUnsavedChanges": "Você tem certeza de que quer sair? Você tem alterações não salvas.",
     "notifications": {
@@ -148,13 +141,13 @@
         "error_": "Erro",
         "error": "Erro (status code: {{statusCode}})",
         "undoable": "Você tem {{seconds}} segundos para desfazer",
-        "createSuccess": "Successfully created {{resource}}",
-        "createError": "There was an error creating {{resource}} (status code: {{statusCode}})",
-        "deleteSuccess": "Successfully deleted {{resource}}",
-        "deleteError": "Error when deleting {{resource}} (status code: {{statusCode}})",
-        "editSuccess": "Successfully edited {{resource}}",
-        "editError": "Error when editing {{resource}} (status code: {{statusCode}})",
-        "importProgress": "Importing: {{processed}}/{{total}}"
+        "createSuccess": "Criado com sucesso {{resource}}",
+        "createError": "Ocorreu um erro ao criar {{resource}} (status code: {{statusCode}})",
+        "deleteSuccess": "Excluído com sucessos {{resource}}",
+        "deleteError": "Erro ao deletar {{resource}} (status code: {{statusCode}})",
+        "editSuccess": "Editado com sucesso {{resource}}",
+        "editError": "Erro ao editar {{resource}} (status code: {{statusCode}})",
+        "importProgress": "Importando: {{processed}}/{{total}}"
     },
     "users": {
         "users": "Usuários",
@@ -166,54 +159,11 @@
         },
         "fields": {
             "id": "Código",
-            "avatar": {
-                "label": "Avatar",
-                "description": "Click or drag avatar image to this area to upload."
-            },
             "name": "Nome",
             "email": "Email",
             "plainPassword": "Password",
             "enabled": "Habilitado?",
-            "isVerified": "Verificado?",
-            "gender": {
-                "label": "Gender",
-                "Male": "Male",
-                "Female": "Female"
-            },
-            "gsm": "Gsm Number",
-            "createdAt": "CreatedAt",
-            "isActive": {
-                "label": "Is Active",
-                "true": "Yes",
-                "false": "No"
-            }
-        },
-        "filter": {
-            "title": "Filters",
-            "search": {
-                "label": "Search",
-                "placeholder": "FirstName, lastName, gsm, etc."
-            },
-            "createdAt": {
-                "label": "Created At"
-            },
-            "gender": {
-                "label": "Gender",
-                "placeholder": "Gender",
-                "male": "Male",
-                "female": "Female"
-            },
-            "isActive": {
-                "label": "Active",
-                "placeholder": "Active status",
-                "true": "Yes",
-                "false": "No"
-            },
-            "submit": "Filter"
-        },
-        "addresses": {
-            "addresses": "Addresses",
-            "address": "Address"
+            "isVerified": "Verificado?"
         }
     },
     "images": {
