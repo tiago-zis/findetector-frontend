@@ -9,6 +9,8 @@ import {
 } from "@pankod/refine-antd";
 import { Constants } from "../../helpers/constants";
 import { setObjectValue } from "../../helpers/functions";
+import { notification } from "@pankod/refine-antd";
+import { useState } from "react";
 
 interface Props {
   form: any;
@@ -28,15 +30,16 @@ export const FilesForm: React.FC<Props> = ({
   isRequired = false,
   label = "words.files",
   listType = "text",
-  onChange = (list:any) => {}
+  onChange = (list: any) => { }
 }) => {
 
   const apiUrl = useApiUrl();
   const t = useTranslate();
-
+  
   const uploadProps = {
     action: `${apiUrl}/image/upload`,
     multiple: false,
+    accept: "jpeg;png",
     headers: {
       Authorization: `Bearer ${localStorage.getItem(Constants.TOKEN_KEY)}`,
     },
@@ -66,8 +69,19 @@ export const FilesForm: React.FC<Props> = ({
         })
         .then(({ data: response }) => {
           onSuccess(response, file);
+
+          notification.success({
+            message: `${t('words.success')}`,
+            description: t('phrases.successUploadImage'),
+          });
         })
-        .catch(onError);
+        .catch((reason:any) => {
+          notification.error({
+            message: `${t('words.error')}`,
+            description: t('phrases.errorUploadImage'),
+          });
+          onError(reason);
+        });
 
       return {
         abort() {
@@ -129,6 +143,17 @@ export const FilesForm: React.FC<Props> = ({
         listType={listType}
         maxCount={maxFiles}
         accept={accept}
+        onChange={(e) => {
+          e.fileList.map((el:any, index) => {
+            if (el.status === "done") {
+              document.querySelector('.ant-upload-list')?.querySelectorAll('button').forEach((el, i) => {
+                if (index === i) {
+                  el.click()
+                }
+              })    
+            }
+          })
+        }}        
       >
         <Button icon={<Icons.UploadOutlined />}>{t('phrases.uploadButton')}</Button>
       </Upload.Dragger>

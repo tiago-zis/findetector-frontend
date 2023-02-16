@@ -26,13 +26,8 @@ import { useTranslation } from "react-i18next";
 
 import dataProvider from './dataProvider';
 
-import jsonServerDataProvider from "@pankod/refine-simple-rest";
-
 const App: React.FC = () => {
     const { t, i18n } = useTranslation();
-
-    const API_URL = "https://api.finefoods.refine.dev";
-    const serverDataProvider = jsonServerDataProvider(API_URL);
 
     const i18nProvider = {
         translate: (key: string, params: object) => t(key, params),
@@ -84,11 +79,9 @@ const App: React.FC = () => {
                     dataProvider={dataProvider(
                         `${Constants.API_URL}/api`,
                     )}
-                    // dataProvider={serverDataProvider}
                     accessControlProvider={accessControlProvider}
                     authProvider={authProvider}
                     i18nProvider={i18nProvider}
-                    //DashboardPage={DashboardPage}
                     LoginPage={() => (
                         <AuthPage
                             type="login"
@@ -107,7 +100,12 @@ const App: React.FC = () => {
                         syncWithLocation: true,
                         warnWhenUnsavedChanges: true,
                     }}
-                    resources={[
+                    resources={[                        
+                        {
+                            name: "images",
+                            list: ImageList,
+                            icon: <Icons.PictureOutlined />,
+                        },                        
                         {
                             name: "users",
                             list: UserList,
@@ -116,11 +114,6 @@ const App: React.FC = () => {
                             show: UserShow,
                             icon: <Icons.UserOutlined />,
                         },
-                        {
-                            name: "images",
-                            list: ImageList,
-                            icon: <Icons.UserOutlined />,
-                        },                        
                     ]}
                     notificationProvider={notificationProvider}
                     catchAll={<ErrorComponent />}

@@ -255,12 +255,10 @@ export const authProvider: AuthProvider = {
             return Promise.reject();
         }
 
-        const { username } = JSON.parse(profile);
+        const user = JSON.parse(profile);
 
         return Promise.resolve({
-            id: 1,
-            name: username,
-            avatar: "https://i.pravatar.cc/150",
+            ...user,            
         });
     },
 };

@@ -10,7 +10,9 @@
         "images": "Imagens",
         "confidence": "Confiança",
         "download": "Download",
-        "success": "Sucesso"
+        "success": "Sucesso",
+        "profile": "Perfil",
+        "error": "Erro"
     },
     "phrases": {
         "uploadButton": "Clique para carregar o arquivo",
@@ -22,7 +24,12 @@
         "imageSearch": "Pesquisa de imagem",
         "imageVisualization": "Visualização da imagem",
         "isValidDetection": "Detecção valida?",
-        "isValidDetectionMessage": "Status da detecção atualizada com sucesso"
+        "isValidDetectionMessage": "Status da detecção atualizada com sucesso",
+        "updateProfile": "Atualizar o perfil do usuário",
+        "addPicture": "Adicione uma imagem",
+        "updatePassword": "Alterar a senha?",
+        "successUploadImage": "Upload realizado com sucesso",
+        "errorUploadImage": "Ocorreu um erro durante o upload da imagem"
     },
     "pages": {
         "login": {

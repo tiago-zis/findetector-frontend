@@ -27,7 +27,7 @@ import {
 
 import { IImage } from "interfaces";
 import { FilesForm } from "components/form/files";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImageShow } from "./show";
 
 export const ImageList: React.FC<IResourceComponentsProps> = () => {
@@ -62,6 +62,13 @@ export const ImageList: React.FC<IResourceComponentsProps> = () => {
         },
 
     });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          queryResult.refetch();
+        }, 60000);
+        return () => clearInterval(interval);
+      }, []);
 
     const showDrawer = () => {
         setOpen(true);

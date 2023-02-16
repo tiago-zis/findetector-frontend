@@ -5,3 +5,4 @@ export * from "./courier";
 export * from "./increase";
 export * from "./decrease";
 export * from "./pizza";
+export * from "./menu-icon";
