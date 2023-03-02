@@ -13,7 +13,8 @@
         "success": "Success",
         "profile": "Profile",
         "error": "Error",
-        "FinDetector": "FinDetector"
+        "FinDetector": "FinDetector",
+        "version": "Version"
     },
     "phrases": {
         "uploadButton": "Click here to load the file",
@@ -30,7 +31,11 @@
         "addPicture": "Add an image",
         "updatePassword": "Change password?",
         "successUploadImage": "Upload successfully",
-        "errorUploadImage": "An error occurred while uploading the image"
+        "errorUploadImage": "An error occurred while uploading the image",
+        "sessionExpired": "User session has expired",
+        "termsOfUse": "Terms of use",
+        "acceptTheTerms": "Accept the terms",
+        "termsOfUseAccepted": "Terms of use successfully accepted!"
     },
     "pages": {
         "login": {

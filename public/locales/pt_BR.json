@@ -13,7 +13,8 @@
         "success": "Sucesso",
         "profile": "Perfil",
         "error": "Erro",
-        "FinDetector": "FinDetector"
+        "FinDetector": "FinDetector",
+        "version": "Versão"
     },
     "phrases": {
         "uploadButton": "Clique para carregar o arquivo",
@@ -30,7 +31,11 @@
         "addPicture": "Adicione uma imagem",
         "updatePassword": "Alterar a senha?",
         "successUploadImage": "Upload realizado com sucesso",
-        "errorUploadImage": "Ocorreu um erro durante o upload da imagem"
+        "errorUploadImage": "Ocorreu um erro durante o upload da imagem",
+        "sessionExpired": "A sessão de usuário expirou",
+        "termsOfUse": "Termos de uso",
+        "acceptTheTerms": "Aceitar os termos",
+        "termsOfUseAccepted": "Aceitos com sucesso!"
     },
     "pages": {
         "login": {
@@ -126,7 +131,8 @@
         "reject": "Rejeitar",
         "rejectAll": "Rejeitar tudo",
         "nextStep": "Próximo",
-        "previousStep": "Anterior"
+        "previousStep": "Anterior",
+        "_confirm": "Confirmar"
     },
     "loading": "Carregando",
     "tags": {

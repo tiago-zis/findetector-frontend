@@ -21,6 +21,8 @@ import {
 } from "@pankod/refine-antd";
 
 import { useTranslation } from "react-i18next";
+import { TermsOfUseModal } from "../modal";
+
 const { DownOutlined } = Icons;
 
 const { Text } = Typography;
@@ -91,6 +93,8 @@ export const Header: React.FC = () => {
                     backgroundColor: "#FFF",
                 }}
             >
+                <TermsOfUseModal/>
+                
                 <Row align="middle" justify={screens.sm ? "space-between" : "end"}>
                     <Col xs={0} sm={12}>
 

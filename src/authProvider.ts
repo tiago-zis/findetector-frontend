@@ -218,12 +218,12 @@ export const authProvider: AuthProvider = {
         localStorage.removeItem(Constants.AUTH_KEY);
         return Promise.resolve();
     },
-    checkError: ({ status }) => {
-        if (status === 401) {
+    checkError: ({statusCode}) => {
+        if (statusCode === 401) {
             localStorage.removeItem(Constants.TOKEN_KEY);
             localStorage.removeItem(Constants.AUTH_KEY);
             return Promise.reject({ logoutUser: true });
-        } else if (status === 403) {
+        } else if (statusCode === 403) {
             return Promise.reject({ redirectTo: '/unauthorized', logoutUser: false });
         }
 
