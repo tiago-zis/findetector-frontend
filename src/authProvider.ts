@@ -9,6 +9,7 @@ import { Constants } from './helpers/constants';
 
 
 export const TOKEN_KEY = "refine-auth";
+const i18n = localStorage.getItem('i18nextLng');
 
 export const authProvider: AuthProvider = {
 
@@ -78,15 +79,21 @@ export const authProvider: AuthProvider = {
                     } else if (response.status < 200 || response.status >= 300) {
                         const res = await response.json();
 
-                        return Promise.reject({ message: res && res.message ? res.message : 'Ocorreu um erro durante a inscrição! Tente novamente mais tarte.' });
+                        return Promise.reject({
+                            message: res && res.message ? res.message :
+                                (i18n === 'en' ? 'An error occurred during registration! Try again later.' :
+                                    'Ocorreu um erro durante a inscrição! Tente novamente mais tarde.')
+                        });
                     }
 
                     return response.json();
                 })
                 .then((values) => {
                     notification.success({
-                        message: "Sucesso!",
-                        description: `Inscrição realizada com sucesso. Um email de verificação foi encaminhado para o endereço "${email}".`,
+                        message: (i18n === 'en' ? "Success!" : "Sucesso!"),
+                        description:
+                            (i18n === 'en' ? `Enrollment completed successfully. A verification email has been forwarded to the address "${email}".` :
+                                `Inscrição realizada com sucesso. Um email de verificação foi encaminhado para o endereço "${email}".`),
                     });
 
                     return Promise.resolve(values);
@@ -121,7 +128,7 @@ export const authProvider: AuthProvider = {
                         }
 
                         notification.error({
-                            message: "Redefinir a senha",
+                            message: (i18n === 'en' ? "Reset password" : "Redefinir a senha"),
                             description: message,
                         });
 
@@ -130,8 +137,9 @@ export const authProvider: AuthProvider = {
                         const res = await response.json();
 
                         notification.error({
-                            message: "Redefinir a senha",
-                            description: res && res.message ? res.message : 'Ops! Ocorreu um erro durante a operação.',
+                            message: (i18n === 'en' ? "Reset password" : "Redefinir a senha"),
+                            description: res && res.message ? res.message :
+                                (i18n === 'en' ? "Oops! An error occurred during the operation." : 'Ops! Ocorreu um erro durante a operação.'),
                         });
 
                         return Promise.reject({ message: res && res.message ? res.message : 'app.errors.forgot_password_error' });
@@ -142,8 +150,10 @@ export const authProvider: AuthProvider = {
                 .then((values) => {
 
                     notification.success({
-                        message: "Redefinir a senha",
-                        description: `O link para redefinir a senha foi enviado para "${email}"`,
+                        message: (i18n === 'en' ? "Reset password" : "Redefinir a senha"),
+                        description:
+                            (i18n === 'en' ? `The link to reset your password has been sent to "${email}"` :
+                                `O link para redefinir a senha foi enviado para "${email}"`),
                     });
 
                     return Promise.resolve(values);
@@ -201,8 +211,9 @@ export const authProvider: AuthProvider = {
                 })
                 .then((values) => {
                     notification.success({
-                        message: "Atualizar senha",
-                        description: "A senha foi atualizada com sucesso",
+                        message: (i18n === 'en' ? "Update password" : "Atualizar senha"),
+                        description: (i18n === 'en' ? "Password has been updated successfully" :
+                            "A senha foi atualizada com sucesso"),
                     });
                     return Promise.resolve(values);
                 })
@@ -218,7 +229,7 @@ export const authProvider: AuthProvider = {
         localStorage.removeItem(Constants.AUTH_KEY);
         return Promise.resolve();
     },
-    checkError: ({statusCode}) => {
+    checkError: ({ statusCode }) => {
         if (statusCode === 401) {
             localStorage.removeItem(Constants.TOKEN_KEY);
             localStorage.removeItem(Constants.AUTH_KEY);
@@ -258,7 +269,7 @@ export const authProvider: AuthProvider = {
         const user = JSON.parse(profile);
 
         return Promise.resolve({
-            ...user,            
+            ...user,
         });
     },
 };
