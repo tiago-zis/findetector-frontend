@@ -1,4 +1,5 @@
 import { useTranslate } from "@pankod/refine-core";
+import { useEffect, useState } from "react";
 
 import {
     Card,
@@ -12,7 +13,7 @@ import {
 const { Text, Paragraph } = Typography;
 const { CheckOutlined, UploadOutlined, LoadingOutlined } = Icons;
 import moment from "moment";
-import { IImage} from "interfaces";
+import { IImage } from "interfaces";
 import { ImageContainer } from "./imageContainer";
 
 type ImageItemProps = {
@@ -27,6 +28,12 @@ export const ShowItem: React.FC<ImageItemProps> = ({
     updateStock,
 }) => {
     const t = useTranslate();
+    const [showEmptyMessage, setShowEmptyMessage] = useState(false);
+    useEffect(() => {
+        if (item?.processedData && !Array.isArray(item?.processedData) && (!item?.processedData?.boxes || item?.processedData?.boxes.length === 0)) {
+            setShowEmptyMessage(true);
+        }
+    }, [item])
 
     if (!item)
         return <></>
@@ -41,6 +48,16 @@ export const ShowItem: React.FC<ImageItemProps> = ({
                     height: "100%",
                 }}
             >
+                {
+                    showEmptyMessage &&
+                    <Paragraph
+                        ellipsis={{ rows: 3, tooltip: true }}
+                        style={{ marginBottom: "10px", width: '100%', textAlign: 'center', fontWeight: 600 }}
+                    >
+                        <TagField color="red" value={t('phrases.finNotFound')} />
+                    </Paragraph>
+                }
+
                 <div style={{ textAlign: "center" }}>
                     <ImageContainer id={item.id} fileName={item.file.originalName} data={item?.processedData} updateCallback={updateList} />
                 </div>

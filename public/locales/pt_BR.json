@@ -35,7 +35,9 @@
         "sessionExpired": "A sessão de usuário expirou",
         "termsOfUse": "Termos de uso",
         "acceptTheTerms": "Aceitar os termos",
-        "termsOfUseAccepted": "Aceitos com sucesso!"
+        "termsOfUseAccepted": "Aceitos com sucesso!",
+        "finNotFound": "Desculpe-nos, mas não foi possível detectar nadadeiras dorsais nesta imagem!",
+        "profileImageInfo": "A imagem vinculada ao perfil é de inteira responsabilidade do usuário. Entretando, o sistema FinDetector armazena a imagem disponibilizada pelo usuário em nossos servidores, apenas para apresenta-la em algumas partes do sistema."
     },
     "pages": {
         "login": {

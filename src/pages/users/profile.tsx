@@ -13,7 +13,8 @@ import {
     Typography,
     Icons,
     Divider,
-    Checkbox
+    Checkbox,
+    Tooltip
 } from "@pankod/refine-antd";
 
 import { IUser } from "interfaces";
@@ -92,9 +93,9 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
                 .then(({ data: response }) => {
                     setImage(response);
                     onSuccess(response, file);
-                    
+
                     if (user) {
-                        user.image = {id:response.id, name: response.name};
+                        user.image = { id: response.id, name: response.name };
                         localStorage.setItem(Constants.AUTH_KEY, JSON.stringify(user));
                         updateCallback(user);
                     }
@@ -110,7 +111,7 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
         },
     };
 
-    const onChange = (e:any) => {
+    const onChange = (e: any) => {
         setChangePassword(e.target.checked);
     }
 
@@ -128,7 +129,6 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
             initialValues={initialValues}
             resource={'users'}
         >
-
             <Row gutter={16} >
                 <Col span={12} offset={6}>
                     <Upload.Dragger
@@ -141,7 +141,6 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
                     >
 
                         <Space direction="vertical">
-
 
                             {
                                 !image &&
@@ -177,21 +176,27 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
                                 </Text>
                             }
 
-
                         </Space>
-
                     </Upload.Dragger>
                 </Col>
             </Row>
 
-            <Divider></Divider>
+            <Row gutter={16} >
+                <Col span={24} style={{ textAlign: 'right' }}>
+                    <Tooltip placement="topLeft" title={t('phrases.profileImageInfo')} arrowPointAtCenter>
+                        <Icons.InfoCircleOutlined style={{
+                            fontSize: "24px",
+                            marginLeft: "6px",
+                        }} />
+
+                    </Tooltip>
+                </Col>
+            </Row>
+
+            <Divider/>
 
             <Row gutter={[64, 0]} wrap>
                 <Col xs={24} lg={24}>
-
-
-
-
                     <Form.Item
                         label={t("users.fields.name")}
                         name="name"
@@ -216,7 +221,7 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
                         <Input type="email" />
                     </Form.Item>
 
-                    <Checkbox onChange={onChange} style={{marginBottom:5}}>{t('phrases.updatePassword')}</Checkbox>
+                    <Checkbox onChange={onChange} style={{ marginBottom: 5 }}>{t('phrases.updatePassword')}</Checkbox>
 
                     {
                         changePassword &&
@@ -233,7 +238,6 @@ export const UserProfile: React.FC<IProps> = ({ updateCallback, ...rest }) => {
                             <Input type="password" />
                         </Form.Item>
                     }
-
                 </Col>
             </Row>
         </Form>

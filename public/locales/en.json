@@ -35,7 +35,9 @@
         "sessionExpired": "User session has expired",
         "termsOfUse": "Terms of use",
         "acceptTheTerms": "Accept the terms",
-        "termsOfUseAccepted": "Terms of use successfully accepted!"
+        "termsOfUseAccepted": "Terms of use successfully accepted!",
+        "finNotFound": "Sorry, we couldn't detect any dorsal fins in this image!",
+        "profileImageInfo": "The image linked to the profile is the sole responsibility of the user. However, the FinDetector system stores the image provided by the user on our servers, only to display it in some parts of the system."
     },
     "pages": {
         "login": {

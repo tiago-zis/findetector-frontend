@@ -11,7 +11,8 @@ export const STATUS_CHOICES = [
 ]
 
 export const Constants = {
-    API_URL: 'http://localhost:8000',
+    //API_URL: 'http://localhost/findetector/backend/public',
+    API_URL: './backend/public',
     DEFAULT_AVATAR: 'https://i.pravatar.cc/150',
     TOKEN_KEY: 'token_key',
     AUTH_KEY: 'auth_key'
